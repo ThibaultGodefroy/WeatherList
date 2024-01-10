@@ -1,0 +1,29 @@
+PODS:
+  - NetworkUtilsKit (3.2.1):
+    - NetworkUtilsKit/Core (= 3.2.1)
+  - NetworkUtilsKit/Core (3.2.1):
+    - UtilsKit/UtilsKitCore (~> 3.0)
+  - UtilsKit (3.4.1):
+    - UtilsKit/UtilsKitUI (= 3.4.1)
+  - UtilsKit/UtilsKitCore (3.4.1)
+  - UtilsKit/UtilsKitHelpers (3.4.1):
+    - UtilsKit/UtilsKitCore
+  - UtilsKit/UtilsKitUI (3.4.1):
+    - UtilsKit/UtilsKitHelpers
+
+DEPENDENCIES:
+  - NetworkUtilsKit
+  - UtilsKit
+
+SPEC REPOS:
+  trunk:
+    - NetworkUtilsKit
+    - UtilsKit
+
+SPEC CHECKSUMS:
+  NetworkUtilsKit: edaf2bdcaf030f8f026e8ee7c982a79dc47e715f
+  UtilsKit: 6139af39c0f715be6b969a7dafda9a94a2c0923b
+
+PODFILE CHECKSUM: e3c9330ca683cd6f2a13a0518a54afabf7e6d077
+
+COCOAPODS: 1.14.3
