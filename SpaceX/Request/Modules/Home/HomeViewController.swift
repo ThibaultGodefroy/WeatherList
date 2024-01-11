@@ -14,10 +14,14 @@ class HomeViewController: BaseViewController
 >, UITableViewDataSource {
 	
 	// MARK: - Outlets
+	@IBOutlet weak var table: UITableView!
+	@IBOutlet weak var progressBar: UIProgressView!
+	@IBOutlet weak var startButton: UIButton!
 	
 	// MARK: - Variables
-	@IBOutlet weak var table: UITableView!
-	@IBOutlet weak var label: UILabel!
+	var time = 0
+	var timer = Timer()
+	var p: Float = 0.0
 	
 	// MARK: - View life cycle
 	override func viewDidLoad() {
@@ -25,6 +29,24 @@ class HomeViewController: BaseViewController
 		
 		self.interactor.refresh()
 		table.dataSource = self
+		
+		startTimer(startButton)
+	}
+	
+	@IBAction func startTimer(_ sender: UIButton) {
+		
+		timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { timer in
+			self.p += 0.01
+			self.progressBar.progress = self.p
+			if self.progressBar.progress == 1  {
+				print("Loading finished..")
+			}
+		})
+	}
+	
+	@objc private func timerDidEnded() {
+		time += 1
+		print(time)
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
