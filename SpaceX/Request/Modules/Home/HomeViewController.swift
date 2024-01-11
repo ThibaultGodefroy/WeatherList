@@ -27,21 +27,20 @@ class HomeViewController: BaseViewController
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.interactor.refresh()
 		table.dataSource = self
-		
-		startTimer(startButton)
 	}
 	
 	@IBAction func startTimer(_ sender: UIButton) {
-		
-		timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { timer in
-			self.p += 0.01
-			self.progressBar.progress = self.p
-			if self.progressBar.progress == 1  {
-				print("Loading finished..")
-			}
-		})
+//		timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { timer in
+//			self.p += 0.01
+//			self.progressBar.progress = self.p
+//			if self.progressBar.progress == 1  {
+//				print("Loading finished..")
+//				timer.invalidate()
+//				self.interactor.refresh()
+//			}
+//		})
+		self.interactor.start()
 	}
 	
 	@objc private func timerDidEnded() {
@@ -51,11 +50,11 @@ class HomeViewController: BaseViewController
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		// Nombre de lignes a définir en fonction du nombre d'éléments dans le tableau de cityNames.
-		self.viewModel.cityNames?.count ?? 0
+		self.viewModel.cityNames.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cityName = self.viewModel.cityNames!
+		let cityName = self.viewModel.cityNames
 //		let town = self.viewModel.name?[indexPath.row]
 		
 		let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell

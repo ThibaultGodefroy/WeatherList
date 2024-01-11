@@ -10,4 +10,8 @@ class HomePresenter: Presenter<HomeViewModel> {
 		self.viewModel?.cityNames = cityName
 		self.viewModel?.send()
 	}
+	
+	func addCity(name: String) {
+		self.viewModel?.cityNames.append(name)
+	}
 }

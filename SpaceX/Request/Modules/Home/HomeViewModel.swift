@@ -7,6 +7,6 @@
 
 class HomeViewModel: ViewModel {
 	
-	var cityNames : [String]?
+	var cityNames : [String] = []
 	
 }
