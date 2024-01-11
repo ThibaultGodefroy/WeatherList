@@ -28,6 +28,24 @@ class HomeViewController: BaseViewController
 		super.viewDidLoad()
 		
 		table.dataSource = self
+		
+		startTimer(startButton)
+	}
+	
+	@IBAction func startTimer(_ sender: UIButton) {
+		
+		timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { timer in
+			self.p += 0.01
+			self.progressBar.progress = self.p
+			if self.progressBar.progress == 1  {
+				print("Loading finished..")
+			}
+		})
+	}
+	
+	@objc private func timerDidEnded() {
+		time += 1
+		print(time)
 	}
 	
 	@IBAction func startTimer(_ sender: UIButton) {
