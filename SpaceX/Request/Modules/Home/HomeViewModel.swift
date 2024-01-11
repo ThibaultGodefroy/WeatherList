@@ -8,5 +8,5 @@
 class HomeViewModel: ViewModel {
 	
 	var cityNames : [String] = []
-	
+	var currentProgress : Float = 0
 }

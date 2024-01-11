@@ -15,36 +15,29 @@ class HomeInteractor: Interactor
 	
 	// MARK: - Workers
 	private let weatherWorker = WeatherWorker()
-	var currentIndex = 0
-	let towns = [6432801, 2988507, 2990969, 3031582, 2996944]
-	var timer : Timer?
-
+	private var currentIndex = 0
+	private let towns = [6432801, 2988507, 2990969, 3031582, 2996944]
+	private var timer : Timer?
 	
-	func refresh() {
-		Task {
-			do {
-				var cityNames: [String] = []
-				
-				let response = try await weatherWorker.fetchWeather(for: towns[currentIndex])
-				
-				 	
-					print(currentIndex)
-					print(response)
-					currentIndex += 1
-					print(currentIndex)
-					cityNames.append(response.name)
-				
-				
-				self.presenter.display(cityName: cityNames)
-				try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
-				
-				print(cityNames)
-				
-			} catch {
-				print(error)
-			}
-		}
-	}
+	
+//	func refresh() {
+//		Task {
+//			do {
+//				var cityNames: [String] = []
+//				
+//				let response = try await weatherWorker.fetchWeather(for: towns[currentIndex])
+//				
+//				currentIndex += 1
+//				cityNames.append(response.name)
+//				
+//				self.presenter.display(cityName: cityNames)
+//				try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
+//				
+//			} catch {
+//				print(error)
+//			}
+//		}
+//	}
 	
 	func start() {
 		// Récupérer les infos de la première ville
@@ -68,6 +61,8 @@ class HomeInteractor: Interactor
 				self.currentIndex += 1
 				let response = try await self.weatherWorker.fetchWeather(for: cityId)
 				self.presenter.addCity(name: response.name)
+				// afficher progress avec la fonction dans homePresenter
+				self.presenter.progress(newValue:  Float(currentIndex) / Float(towns.count))
 				self.presenter.display()
 			} catch {
 				print(error)

@@ -14,4 +14,7 @@ class HomePresenter: Presenter<HomeViewModel> {
 	func addCity(name: String) {
 		self.viewModel?.cityNames.append(name)
 	}
+	func progress(newValue: Float) {
+		self.viewModel?.currentProgress = newValue
+	}
 }
