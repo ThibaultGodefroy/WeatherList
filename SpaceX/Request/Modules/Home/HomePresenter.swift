@@ -7,16 +7,23 @@
 
 class HomePresenter: Presenter<HomeViewModel> {
 	
-	func display(cityName: [String]) {
-		self.viewModel?.cityNames = cityName
-		self.viewModel?.send()
-	}
-	
 	func addCity(name: String) {
 		self.viewModel?.cityNames.append(name)
 	}
 	
 	func progress(newValue: Float) {
 		self.viewModel?.currentProgress = newValue
+	}
+	
+	func hideComponent(_ value: Bool) {
+		self.viewModel?.isHidden = value
+	}
+	
+	func readCitation(citation: String?) {
+		self.viewModel?.citation = citation
+	}
+	
+	func resetCities() {
+		self.viewModel?.cityNames = []
 	}
 }

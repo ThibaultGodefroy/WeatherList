@@ -43,10 +43,4 @@ class ViewModel: ObservableObject {
 	
 	// MARK: - Init
 	required init() { }
-	
-	func send() {
-		DispatchQueue.main.async {
-			self.objectWillChange.send()
-		}
-	}
 }

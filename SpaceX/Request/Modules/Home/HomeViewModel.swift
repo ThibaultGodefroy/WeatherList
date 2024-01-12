@@ -9,4 +9,6 @@ class HomeViewModel: ViewModel {
 	
 	var cityNames : [String] = []
 	var currentProgress : Float = 0
+	var isHidden: Bool = true
+	var citation: String?
 }

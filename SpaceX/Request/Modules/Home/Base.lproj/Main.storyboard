@@ -23,14 +23,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Iax-sP-Vxc" customClass="CustomTableViewCell" customModule="SpaceX" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iax-sP-Vxc" id="4Ng-jq-BGC">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGF-Hq-b3F">
-                                                    <rect key="frame" x="20" y="10.999999999999998" width="353" height="21.333333333333329"/>
+                                                    <rect key="frame" x="20" y="11.000000000000002" width="353" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,24 +57,33 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Recommencer"/>
                                 <connections>
-                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6VD-KP-820"/>
+                                    <action selector="reload" destination="BYZ-38-t0r" eventType="touchUpInside" id="97p-CU-JVl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoadingCitations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRJ-5H-5j0">
+                                <rect key="frame" x="132.66666666666666" y="716" width="127.99999999999997" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AFc-Zo-XsZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="32P-bC-3Mi"/>
                             <constraint firstItem="AFc-Zo-XsZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="87s-CG-LD7"/>
+                            <constraint firstItem="LRJ-5H-5j0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I0g-k0-nyl"/>
                             <constraint firstItem="mS3-zE-VMZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I32-ru-myg"/>
+                            <constraint firstItem="AFc-Zo-XsZ" firstAttribute="top" secondItem="LRJ-5H-5j0" secondAttribute="bottom" constant="32" id="Ih6-bd-yEZ"/>
                             <constraint firstItem="AFc-Zo-XsZ" firstAttribute="top" secondItem="mS3-zE-VMZ" secondAttribute="bottom" constant="25" id="XbC-3l-2MO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AFc-Zo-XsZ" secondAttribute="trailing" constant="100" id="gkd-zX-RR3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AFc-Zo-XsZ" secondAttribute="bottom" constant="45" id="xLY-Mc-OPO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingCitations" destination="LRJ-5H-5j0" id="irQ-ek-NNw"/>
                         <outlet property="progressBar" destination="AFc-Zo-XsZ" id="xMd-ds-0ax"/>
-                        <outlet property="startButton" destination="mS3-zE-VMZ" id="omZ-2h-jfU"/>
+                        <outlet property="restartButton" destination="mS3-zE-VMZ" id="omZ-2h-jfU"/>
                         <outlet property="table" destination="saM-ks-VcM" id="FNK-5p-7rq"/>
                     </connections>
                 </viewController>
