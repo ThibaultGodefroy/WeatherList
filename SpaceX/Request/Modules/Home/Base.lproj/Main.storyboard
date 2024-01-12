@@ -52,9 +52,8 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-Zo-XsZ">
                                 <rect key="frame" x="100" y="769" width="193" height="4"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mS3-zE-VMZ">
-                                <rect key="frame" x="131" y="709" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mS3-zE-VMZ">
+                                <rect key="frame" x="129" y="709" width="135" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Recommencer"/>
                                 <connections>
@@ -67,6 +66,8 @@
                         <constraints>
                             <constraint firstItem="AFc-Zo-XsZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="32P-bC-3Mi"/>
                             <constraint firstItem="AFc-Zo-XsZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="87s-CG-LD7"/>
+                            <constraint firstItem="mS3-zE-VMZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I32-ru-myg"/>
+                            <constraint firstItem="AFc-Zo-XsZ" firstAttribute="top" secondItem="mS3-zE-VMZ" secondAttribute="bottom" constant="25" id="XbC-3l-2MO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AFc-Zo-XsZ" secondAttribute="trailing" constant="100" id="gkd-zX-RR3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AFc-Zo-XsZ" secondAttribute="bottom" constant="45" id="xLY-Mc-OPO"/>
                         </constraints>

@@ -6,6 +6,7 @@
 //
 
 class HomePresenter: Presenter<HomeViewModel> {
+	
 	func display(cityName: [String]) {
 		self.viewModel?.cityNames = cityName
 		self.viewModel?.send()
@@ -14,6 +15,7 @@ class HomePresenter: Presenter<HomeViewModel> {
 	func addCity(name: String) {
 		self.viewModel?.cityNames.append(name)
 	}
+	
 	func progress(newValue: Float) {
 		self.viewModel?.currentProgress = newValue
 	}
